@@ -4,16 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>test</title>
-    <script type="text/javascript" src="phaser.min.js"></script>
+    <script type="text/javascript" src="js/phaser.min.js"></script>
+    <style>
+        body{
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #game{
+            margin: 10px auto;
+            padding: 0;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
-     <h1>我的项目</h1>
-     <div id="container">
-         
-     </div>
-     <script type="text/javascript">
-         var game = Phaser.Game(400,400,Phaser.AUTO,'container');
-         
-     </script>
+     <div id="game"></div>
+     <script type="text/javascript" src="js/breakout.js"></script>
+     <!--<script type="text/javascript" src="a.js"></script>-->
 </body>
 </html>
