@@ -1,4 +1,4 @@
-
+alert("这是一个复制粘贴过来的烂游戏！");
 const config= {
     type:Phaser.AUTO,
     width:600,
