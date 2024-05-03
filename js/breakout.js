@@ -87,30 +87,32 @@ var keyboard = document.getElementById(`keyboard`);
                 //game.physics.arcade.collide(player,platforms);
                 
                 //控制主角开始
-     if(cursors.left.isDown)
-      {
-        player.setVelocityX(-50);
+                  if(cursors.left.isDown)
+                  {
+                   player.setVelocityX(-50);
 
-        player.anims.play("left",true);
-      }
-      else if(cursors.right.isDown)
-      {
-        player.setVelocityX(50);
+                   player.anims.play("left",true);
+                  }
+                   else if(cursors.right.isDown)
+                  {
+                   player.setVelocityX(50);
 
-        player.anims.play("right",true);
-      }
-      else{
-        player.setVelocityX(0)
+                   player.anims.play("right",true);
+                  }
+                  else{
+                   player.setVelocityX(0);
 
-        player.anims.play('turn');
-      }
+                   player.anims.play('turn');
+                  }
       
-      if(cursors.up.isDown && player.body.touching.down){
-        player.setVelocityY(-70);
-      }
+                  if(cursors.up.isDown){
+                      // && player.body.touching.down
+                  player.setVelocityY(-70);
+                  cursors.up.isDown = false;
+                  }
     
             
-   }
+             }
    
    
    keyboard.addEventListener(`click`,(event)=>{
@@ -119,24 +121,25 @@ var keyboard = document.getElementById(`keyboard`);
            if(value == `上`){
                //player.setVelocityY(-60);
                cursors.up.isDown=true;
-               player.body.touching.down = true;
-           }else if(value == `下`){
-               //player.setVelocityY(50);
+               //player.body.touching.down = true;
+               
                
            }else if(value == `左`){
                /*player.setVelocityX(-50);
                player.anims.play("left",true);*/
                cursors.left.isDown=true;
+               cursors.up.isDown=false;
+               ursors.right.isDown = false;
            }else if(value == `右`){
               /* player.setVelocityX(50);
                player.anims.play("right",true);*/
                cursors.right.isDown = true;
+               cursors.up.isDown=false;
+               cursors.left.isDown=false;
            }else{
               /* player.setVelocityX(0);
                player.anims.play('turn');*/
-               cursors.up.isDown=false;
-               cursors.left.isDown=false;
-               ursors.right.isDown = false;
+               
            }
            
            
